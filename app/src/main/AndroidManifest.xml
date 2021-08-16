@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.richardswesterhof.nfcactions" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NFCActions" >
+
+        <receiver
+            android:name=".ToggleLightReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.richardswesterhof.nfcactions.TOGGLE_LIGHT" />
+            </intent-filter>
+        </receiver>
+<!--        <receiver-->
+<!--            android:name=".ToggleLightReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true" >-->
+<!--            <intent-filter android:label="filter_nfc_action" >-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
+
+<!--&lt;!&ndash;                <category android:name="android.intent.category.DEFAULT" />&ndash;&gt;-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+<!--                &lt;!&ndash; Accepts URIs that begin with "nfcaction://togglelight” &ndash;&gt;-->
+<!--                <data-->
+<!--                    android:host="togglelight"-->
+<!--                    android:scheme="nfcaction" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+
+        <activity
+            android:name="com.richardswesterhof.nfcactions.ToggleLightActivity"
+            android:exported="true"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat.Translucent" >
+
+            <intent-filter android:label="filter_nfc_action" >
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "nfcaction://togglelight” -->
+                <data
+                    android:host="togglelight"
+                    android:scheme="nfcaction" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.richardswesterhof.nfcactions.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
