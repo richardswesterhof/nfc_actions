@@ -10,7 +10,7 @@ class ToggleLightActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         moveTaskToBack(true)
         setContentView(R.layout.activity_toggle_light)
-        Log.i("debug info", "started toggle light activity")
+        Log.d("togglelight", "started toggle light activity")
 
         Intent(this, ToggleLightReceiver::class.java).also { intent ->
             intent.action = "com.richardswesterhof.TOGGLE_LIGHT"

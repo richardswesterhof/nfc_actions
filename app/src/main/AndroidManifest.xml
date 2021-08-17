@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.richardswesterhof.nfcactions" >
 
+<!--    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="31" />-->
+
+    <!-- specify permissions needed -->
+    <!-- internet and network state are needed for lan control of the light bulb -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
